@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Метрополия — ВЭД, логистика и таможенное сопровождение</title>
+  <meta name="description" content="ООО «Метрополия»: международная логистика, оплата поставщикам, таможенная очистка и документы для легальной торговли в РФ.">
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #f4f1ea;
+      --muted: #aeb8b2;
+      --paper: #101414;
+      --panel: rgba(255, 255, 255, .075);
+      --panel-strong: rgba(255, 255, 255, .12);
+      --line: rgba(255, 255, 255, .16);
+      --copper: #d99b5b;
+      --mint: #5ee0b7;
+      --jade: #173a34;
+      --coal: #090d0d;
+      --shadow: 0 24px 90px rgba(0, 0, 0, .42);
+      --radius: 8px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(94, 224, 183, .16), transparent 30rem),
+        radial-gradient(circle at 88% 24%, rgba(217, 155, 91, .13), transparent 32rem),
+        linear-gradient(180deg, #0b1010 0%, #101414 46%, #0c1111 100%);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .12;
+      background-image:
+        linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: linear-gradient(to bottom, black, transparent 78%);
+      z-index: -1;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(9, 13, 13, .74);
+      border-bottom: 1px solid rgba(255,255,255,.09);
+    }
+
+    .nav {
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .mark {
+      width: 44px;
+      height: 44px;
+      flex: 0 0 44px;
+      border: 1px solid rgba(255,255,255,.22);
+      background: linear-gradient(135deg, rgba(94,224,183,.22), rgba(217,155,91,.18));
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      box-shadow: 0 12px 40px rgba(94, 224, 183, .14);
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 18px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: #d7ded9;
+      font-size: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 8px;
+      background: rgba(255,255,255,.08);
+      color: var(--ink);
+      font-weight: 700;
+      transition: transform .25s ease, border-color .25s ease, background .25s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(94,224,183,.65);
+      background: rgba(94,224,183,.13);
+    }
+
+    .btn.primary {
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--mint), var(--copper));
+      color: #07100e;
+      box-shadow: 0 16px 50px rgba(94, 224, 183, .18);
+    }
+
+    .hero {
+      position: relative;
+      min-height: calc(100svh - 74px);
+      display: grid;
+      align-items: center;
+      padding: 48px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(380px, 1fr);
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-copy {
+      max-width: 690px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--mint);
+      font-weight: 800;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+
+    h1 {
+      margin-top: 22px;
+      font-size: clamp(32px, 4.3vw, 56px);
+      line-height: 1.02;
+      letter-spacing: 0;
+      max-width: 680px;
+    }
+
+    .lead {
+      margin-top: 22px;
+      max-width: 590px;
+      color: #c8d0cb;
+      font-size: clamp(17px, 1.55vw, 20px);
+      line-height: 1.55;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 34px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 34px;
+      max-width: 610px;
+    }
+
+    .metric {
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+    }
+
+    .metric b {
+      display: block;
+      color: var(--ink);
+      font-size: clamp(24px, 4vw, 36px);
+      line-height: 1;
+    }
+
+    .metric span {
+      display: block;
+      color: var(--muted);
+      margin-top: 8px;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .route-panel {
+      position: relative;
+      min-height: 430px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 8px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 34% 28%, rgba(94,224,183,.22), transparent 10rem),
+        radial-gradient(circle at 84% 78%, rgba(217,155,91,.2), transparent 13rem),
+        linear-gradient(135deg, rgba(20,44,39,.92), rgba(15,18,17,.96) 56%, rgba(31,30,25,.92));
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    .route-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, rgba(94,224,183,.1), transparent 30%, rgba(217,155,91,.18)),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.06) 0 1px, transparent 1px 86px);
+      mix-blend-mode: screen;
+      opacity: .75;
+    }
+
+    .orbit {
+      position: absolute;
+      left: 50%;
+      top: 48%;
+      width: 330px;
+      height: 330px;
+      transform: translate(-50%, -50%);
+      border: 1px solid rgba(255,255,255,.26);
+      border-radius: 50%;
+      animation: spin 18s linear infinite;
+    }
+
+    .orbit::before, .orbit::after {
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 28px var(--mint);
+    }
+
+    .orbit::before { left: 24px; top: 52px; }
+    .orbit::after { right: 42px; bottom: 26px; background: var(--copper); box-shadow: 0 0 28px var(--copper); }
+
+    .path-card {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      z-index: 2;
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 8px;
+      background: rgba(7, 12, 12, .72);
+      backdrop-filter: blur(18px);
+    }
+
+    .path-card small {
+      color: var(--mint);
+      font-weight: 800;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+
+    .path {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .stop {
+      position: relative;
+      min-height: 82px;
+      padding: 14px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.08);
+      color: #eaf0eb;
+      font-size: 13px;
+      line-height: 1.25;
+    }
+
+    .stop::before {
+      content: attr(data-step);
+      display: block;
+      color: var(--copper);
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    section { padding: 84px 0; }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 36px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+
+    h2 {
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1;
+      max-width: 760px;
+    }
+
+    .section-head p {
+      max-width: 430px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      min-height: 250px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      position: relative;
+      overflow: hidden;
+      transition: transform .3s ease, background .3s ease, border-color .3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      background: var(--panel-strong);
+      border-color: rgba(94,224,183,.45);
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: auto 20px 20px auto;
+      width: 92px;
+      height: 92px;
+      border: 1px solid rgba(255,255,255,.12);
+      transform: rotate(45deg);
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: rgba(94,224,183,.12);
+      color: var(--mint);
+      margin-bottom: 28px;
+    }
+
+    .card h3 { font-size: 22px; margin-bottom: 14px; }
+    .card p { color: var(--muted); line-height: 1.55; }
+
+    .band {
+      background: linear-gradient(135deg, rgba(94,224,183,.12), rgba(217,155,91,.1));
+      border-block: 1px solid rgba(255,255,255,.12);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 44px;
+      align-items: start;
+    }
+
+    .sticky-note {
+      position: sticky;
+      top: 112px;
+    }
+
+    .list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 18px;
+      align-items: start;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(9,13,13,.34);
+    }
+
+    .row b {
+      color: var(--copper);
+      font-size: 18px;
+    }
+
+    .row h3 { font-size: 21px; margin-bottom: 8px; }
+    .row p { color: var(--muted); line-height: 1.5; }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .phase {
+      padding: 24px;
+      min-height: 230px;
+      background: rgba(255,255,255,.055);
+      border-right: 1px solid var(--line);
+    }
+
+    .phase:last-child { border-right: 0; }
+    .phase span { color: var(--mint); font-weight: 900; }
+    .phase h3 { margin: 38px 0 12px; font-size: 21px; }
+    .phase p { color: var(--muted); line-height: 1.5; }
+
+    .contact {
+      padding: 42px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(9,13,13,.92), rgba(23,58,52,.75)),
+        url("https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1400&q=80") center / cover;
+      display: block;
+      min-height: 330px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact p {
+      margin-top: 18px;
+      color: #d5ded8;
+      font-size: 18px;
+      line-height: 1.55;
+      max-width: 690px;
+    }
+
+    footer {
+      padding: 42px 0 44px;
+      color: var(--muted);
+      font-size: 14px;
+      background: rgba(7, 11, 11, .62);
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: minmax(260px, .8fr) 1.2fr;
+      gap: 56px;
+      align-items: start;
+      padding-bottom: 30px;
+    }
+
+    .footer-brand h2 {
+      font-size: clamp(28px, 3.8vw, 44px);
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      color: #c5cec8;
+      line-height: 1.55;
+      max-width: 420px;
+    }
+
+    .contact-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .contact-list li {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 18px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      color: #d9e2dd;
+      line-height: 1.5;
+    }
+
+    .contact-list b {
+      display: block;
+      color: var(--mint);
+      font-size: 13px;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .contact-list a {
+      color: var(--ink);
+      font-weight: 800;
+      border-bottom: 1px solid rgba(94,224,183,.5);
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+    }
+
+    .reveal {
+      opacity: 1;
+      transform: translateY(16px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes spin {
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    @media (max-width: 920px) {
+      .links { display: none; }
+      .hero-grid, .split, .footer-main { grid-template-columns: 1fr; }
+      .route-panel { min-height: 390px; }
+      .cards, .timeline, .contact-list { grid-template-columns: 1fr; }
+      .phase { border-right: 0; border-bottom: 1px solid var(--line); min-height: 180px; }
+      .phase:last-child { border-bottom: 0; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 18px; }
+      .sticky-note { position: static; }
+    }
+
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 28px, 1180px); }
+      .nav { height: 66px; }
+      .brand > span:not(.mark) { display: none; }
+      .brand .mark { display: grid; }
+      .hero { min-height: calc(100svh - 66px); padding: 44px 0 56px; }
+      .metrics, .path { grid-template-columns: 1fr; }
+      .route-panel { display: none; }
+      .orbit { width: 250px; height: 250px; }
+      section { padding: 62px 0; }
+      .contact { padding: 26px; }
+      footer { padding: 34px 0 36px; }
+      .footer-main { gap: 28px; }
+      .contact-list li { grid-template-columns: 1fr; gap: 8px; }
+      .footer-grid { display: block; }
+      .footer-grid div + div { margin-top: 14px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .001ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav wrap" aria-label="Основная навигация">
+      <a class="brand" href="#top" aria-label="Метрополия">
+        <span class="mark" aria-hidden="true">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 25V7L15 3L26 7V25" stroke="#F4F1EA" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M9 25V12L15 9L21 12V25" stroke="#5EE0B7" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M4 25H26" stroke="#D99B5B" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span>
+          <strong>Метрополия</strong>
+          <span>торгово-логистический партнер</span>
+        </span>
+      </a>
+      <div class="links" aria-label="Разделы">
+        <a href="#services">Услуги</a>
+        <a href="#payments">Платежи</a>
+        <a href="#customs">Таможня</a>
+        <a href="#workflow">Алгоритм</a>
+      </div>
+      <a class="btn" href="#contacts">Контакты</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">ВЭД • логистика • документы</span>
+          <h1>Импорт под контролем</h1>
+          <p class="lead">ООО «Метрополия» помогает оплатить поставщика, привезти груз, пройти таможню и получить документы для легальной торговли в России.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#contacts">Обсудить поставку</a>
+            <a class="btn" href="#workflow">Посмотреть процесс</a>
+          </div>
+          <div class="metrics" aria-label="Ключевые показатели">
+            <div class="metric"><b data-count="4">4</b><span>этапа в едином окне</span></div>
+            <div class="metric"><b data-count="360">360</b><span>градусов контроля сделки</span></div>
+            <div class="metric"><b data-count="1">1</b><span>партнер вместо цепочки подрядчиков</span></div>
+          </div>
+        </div>
+
+        <div class="route-panel" aria-label="Маршрут поставки">
+          <div class="orbit" aria-hidden="true"></div>
+          <div class="path-card">
+            <small>Маршрут под контролем</small>
+            <div class="path">
+              <div class="stop" data-step="01">Инвойс и контракт</div>
+              <div class="stop" data-step="02">Платеж поставщику</div>
+              <div class="stop" data-step="03">Доставка груза</div>
+              <div class="stop" data-step="04">Таможенный выпуск</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>Собираем сложную поставку в понятный рабочий контур</h2>
+          <p>По модели исходного референса фокус здесь не только на перевозке, а на полном сопровождении ВЭД: деньги, маршрут, таможня и документы.</p>
+        </div>
+        <div class="cards">
+          <article class="card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 7h16v10H4z" stroke="currentColor" stroke-width="1.8"/><path d="M7 10h7M7 14h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Оплата товара</h3>
+            <p>Подбираем платежное решение под страну, поставщика и товарную группу. Синхронизируем оплату с контрактом, логистикой и валютным контролем.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 16h13V7H3v9Z" stroke="currentColor" stroke-width="1.8"/><path d="M16 11h3l2 3v2h-5v-5Z" stroke="currentColor" stroke-width="1.8"/><path d="M7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM18 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" stroke="currentColor" stroke-width="1.8"/></svg>
+            </div>
+            <h3>Логистика</h3>
+            <p>Организуем сборные, контейнерные, автомобильные, морские и железнодорожные перевозки. Сравниваем сроки, риски и стоимость маршрутов.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M6 3h9l3 3v15H6V3Z" stroke="currentColor" stroke-width="1.8"/><path d="M14 3v4h4M9 12h6M9 16h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Таможенная очистка</h3>
+            <p>Готовим документы, рассчитываем платежи, сопровождаем досмотры и подачу деклараций до статуса «выпуск разрешен».</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="payments" class="band">
+      <div class="wrap split">
+        <div class="sticky-note reveal">
+          <span class="eyebrow">Платежи поставщикам</span>
+          <h2>Международная оплата без лишней драматургии</h2>
+        </div>
+        <div class="list">
+          <article class="row reveal"><b>01</b><div><h3>Получение инвойса и проверка сделки</h3><p>Смотрим реквизиты, товарную группу, ограничения, страну отправления и требования к будущему оформлению.</p></div></article>
+          <article class="row reveal"><b>02</b><div><h3>Работа по агентскому или торговому договору</h3><p>Подбираем юридическую схему под задачу клиента и обеспечиваем прозрачную документальную связку.</p></div></article>
+          <article class="row reveal"><b>03</b><div><h3>Оплата широкого спектра товарных групп</h3><p>Учитываем особенности товара, логистики, маркировки, сертификации и последующей продажи в России.</p></div></article>
+          <article class="row reveal"><b>04</b><div><h3>Согласование сроков поступления средств</h3><p>Планируем платеж так, чтобы поставщик вовремя увидел оплату, а поставка не потеряла темп.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="customs">
+      <div class="wrap split">
+        <div class="sticky-note reveal">
+          <span class="eyebrow">Логистика и таможня</span>
+          <h2>Заранее считаем то, что обычно всплывает на границе</h2>
+        </div>
+        <div class="list">
+          <article class="row reveal"><b>01</b><div><h3>Расчет пошлин и платежей</h3><p>Проверяем ставки, спецпошлины, преференции и возможные меры нетарифного регулирования.</p></div></article>
+          <article class="row reveal"><b>02</b><div><h3>Маркировка и разрешительные документы</h3><p>Уточняем требования ТР ТС, ГОСТ, «Честного знака», этикеток, деклараций и сертификатов.</p></div></article>
+          <article class="row reveal"><b>03</b><div><h3>Выбор маршрута</h3><p>Сравниваем стоимость доставки, сроки, транзитные ограничения, формат груза и комиссию брокера.</p></div></article>
+          <article class="row reveal"><b>04</b><div><h3>Подача декларации</h3><p>Сопровождаем подготовку, подачу и коммуникацию с таможенными органами до завершения оформления.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="workflow" class="band">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>Алгоритм работы</h2>
+          <p>Клиент видит понятную последовательность, а операционная часть остается у команды сопровождения.</p>
+        </div>
+        <div class="timeline">
+          <article class="phase reveal"><span>01</span><h3>Инвойс от поставщика</h3><p>Фиксируем условия поставки, стоимость, товар и документы, которые понадобятся на следующих этапах.</p></article>
+          <article class="phase reveal"><span>02</span><h3>Контракт для выкупа</h3><p>Оформляем договорную основу сделки и согласуем роли сторон.</p></article>
+          <article class="phase reveal"><span>03</span><h3>Валютный контроль</h3><p>Готовим платежную часть так, чтобы она проходила без лишних задержек.</p></article>
+          <article class="phase reveal"><span>04</span><h3>Оплата и доставка</h3><p>Проводим оплату, запускаем маршрут и доводим груз до таможенного выпуска.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts">
+      <div class="wrap">
+        <div class="contact reveal">
+          <div>
+            <span class="eyebrow">ООО «Метрополия»</span>
+            <h2>Логистический отдел на аутсорсинге для импортных поставок</h2>
+            <p>Оставьте заявку, приложите инвойс или опишите товар: команда оценит платежную схему, маршрут, таможенные требования и пакет документов. Почта для связи: info@metropoly.pro.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <h2>ООО «Метрополия»</h2>
+          <p>ВЭД, международная логистика, оплата поставщикам и таможенное сопровождение.</p>
+        </div>
+        <ul class="contact-list">
+          <li><b>Адрес</b><span>Москва, ул. Партизанская, д. 26, помещение 4</span></li>
+          <li><b>Время работы</b><span>С понедельника по пятницу с 9:00 до 18:00, суббота и воскресенье — выходные</span></li>
+          <li><b>Для связи</b><span>Почта <a href="mailto:info@metropoly.pro">info@metropoly.pro</a></span></li>
+        </ul>
+      </div>
+      <div class="footer-grid">
+        <div>© 2026 ООО «Метрополия»</div>
+        <div>Контакты и адрес указаны в нижнем блоке сайта</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.16 });
+    reveals.forEach((item) => observer.observe(item));
+
+    const counters = document.querySelectorAll("[data-count]");
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting || entry.target.dataset.done) return;
+        entry.target.dataset.done = "true";
+        const target = Number(entry.target.dataset.count);
+        const duration = 900;
+        const start = performance.now();
+        const tick = (now) => {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          entry.target.textContent = Math.round(target * eased).toLocaleString("ru-RU");
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.5 });
+    counters.forEach((item) => countObserver.observe(item));
+
+  </script>
+</body>
+</html>
