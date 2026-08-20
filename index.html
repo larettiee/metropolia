@@ -569,19 +569,129 @@
     }
 
     @media (max-width: 620px) {
-      .wrap { width: min(100% - 28px, 1180px); }
-      .nav { height: 66px; }
-      .brand > span:not(.mark) { display: none; }
+      .wrap { width: min(100% - 32px, 1180px); }
+      .nav { height: 68px; gap: 12px; }
+      .brand { gap: 10px; }
       .brand .mark { display: grid; }
-      .hero { min-height: calc(100svh - 66px); padding: 44px 0 56px; }
-      .metrics, .path { grid-template-columns: 1fr; }
+      .brand > span:not(.mark) { display: block; }
+      .brand strong { font-size: 15px; }
+      .brand span span { display: none; }
+      .nav .btn {
+        min-height: 38px;
+        padding: 0 12px;
+        font-size: 13px;
+      }
+      .hero {
+        min-height: auto;
+        padding: 42px 0 48px;
+      }
+      .eyebrow {
+        font-size: 11px;
+        gap: 8px;
+        letter-spacing: .1em;
+      }
+      .eyebrow::before { width: 24px; }
+      h1 {
+        margin-top: 18px;
+        font-size: 40px;
+        line-height: 1.04;
+      }
+      .lead {
+        margin-top: 18px;
+        font-size: 17px;
+        line-height: 1.5;
+      }
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 26px;
+      }
+      .hero-actions .btn {
+        width: 100%;
+        min-height: 48px;
+      }
+      .metrics {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 28px;
+      }
+      .metric {
+        min-height: 104px;
+        padding: 14px 10px;
+        border: 1px solid rgba(255,255,255,.14);
+        border-radius: 8px;
+        background: rgba(255,255,255,.055);
+      }
+      .metric b { font-size: 28px; }
+      .metric span {
+        margin-top: 8px;
+        font-size: 11px;
+        line-height: 1.25;
+      }
+      .path { grid-template-columns: 1fr; }
       .route-panel { display: none; }
       .orbit { width: 250px; height: 250px; }
-      section { padding: 62px 0; }
-      .contact { padding: 26px; }
+      section { padding: 52px 0; }
+      .section-head { margin-bottom: 22px; }
+      h2 {
+        font-size: 30px;
+        line-height: 1.08;
+      }
+      .section-head p,
+      .card p,
+      .row p,
+      .phase p {
+        font-size: 14px;
+      }
+      .cards { gap: 12px; }
+      .card {
+        min-height: auto;
+        padding: 20px;
+      }
+      .icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 18px;
+      }
+      .card h3 { font-size: 19px; }
+      .split { gap: 24px; }
+      .row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 18px;
+      }
+      .row b {
+        width: fit-content;
+        padding: 4px 9px;
+        border-radius: 999px;
+        background: rgba(217,155,91,.12);
+        font-size: 13px;
+      }
+      .row h3 { font-size: 18px; }
+      .phase {
+        min-height: auto;
+        padding: 20px;
+      }
+      .phase h3 {
+        margin: 18px 0 10px;
+        font-size: 18px;
+      }
+      .contact {
+        min-height: auto;
+        padding: 24px;
+      }
+      .contact h2 { font-size: 28px; }
+      .contact p {
+        font-size: 15px;
+        line-height: 1.5;
+      }
       footer { padding: 34px 0 36px; }
       .footer-main { gap: 28px; }
+      .footer-brand h2 { font-size: 28px; }
+      .footer-brand p { font-size: 14px; }
       .contact-list li { grid-template-columns: 1fr; gap: 8px; }
+      .contact-list b { font-size: 11px; }
       .footer-grid { display: block; }
       .footer-grid div + div { margin-top: 14px; }
     }
