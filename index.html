@@ -491,13 +491,7 @@
 
     .footer-brand h2 {
       font-size: clamp(28px, 3.8vw, 44px);
-      margin-bottom: 12px;
-    }
-
-    .footer-brand p {
-      color: #c5cec8;
-      line-height: 1.55;
-      max-width: 420px;
+      margin: 0;
     }
 
     .contact-list {
@@ -531,14 +525,6 @@
       color: var(--ink);
       font-weight: 800;
       border-bottom: 1px solid rgba(94,224,183,.5);
-    }
-
-    .footer-grid {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      border-top: 1px solid var(--line);
-      padding-top: 22px;
     }
 
     .reveal {
@@ -689,11 +675,8 @@
       footer { padding: 34px 0 36px; }
       .footer-main { gap: 28px; }
       .footer-brand h2 { font-size: 28px; }
-      .footer-brand p { font-size: 14px; }
       .contact-list li { grid-template-columns: 1fr; gap: 8px; }
       .contact-list b { font-size: 11px; }
-      .footer-grid { display: block; }
-      .footer-grid div + div { margin-top: 14px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -859,18 +842,13 @@
     <div class="wrap">
       <div class="footer-main">
         <div class="footer-brand">
-          <h2>ООО «Метрополия»</h2>
-          <p>ВЭД, международная логистика, оплата поставщикам и таможенное сопровождение.</p>
+          <h2>Контакты</h2>
         </div>
         <ul class="contact-list">
           <li><b>Адрес</b><span>Москва, ул. Партизанская, д. 26, помещение 4</span></li>
           <li><b>Время работы</b><span>С понедельника по пятницу с 9:00 до 18:00, суббота и воскресенье — выходные</span></li>
           <li><b>Для связи</b><span>Почта <a href="mailto:info@metropoly.pro">info@metropoly.pro</a></span></li>
         </ul>
-      </div>
-      <div class="footer-grid">
-        <div>© 2026 ООО «Метрополия»</div>
-        <div>Контакты и адрес указаны в нижнем блоке сайта</div>
       </div>
     </div>
   </footer>
