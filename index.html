@@ -618,7 +618,7 @@
       .path { grid-template-columns: 1fr; }
       .route-panel { display: none; }
       .orbit { width: 250px; height: 250px; }
-      section { padding: 52px 0; }
+      section { padding: 46px 0; }
       .section-head { margin-bottom: 22px; }
       h2 {
         font-size: 30px;
@@ -642,10 +642,25 @@
       }
       .card h3 { font-size: 19px; }
       .split { gap: 24px; }
+      #payments .split,
+      #customs .split {
+        gap: 18px;
+      }
+      #payments .list,
+      #customs .list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
       .row {
         grid-template-columns: 1fr;
         gap: 10px;
         padding: 18px;
+      }
+      #payments .row,
+      #customs .row {
+        min-height: 132px;
+        padding: 14px;
+        align-content: start;
       }
       .row b {
         width: fit-content;
@@ -655,13 +670,37 @@
         font-size: 13px;
       }
       .row h3 { font-size: 18px; }
+      #payments .row h3,
+      #customs .row h3 {
+        font-size: 14px;
+        line-height: 1.25;
+        margin-bottom: 0;
+      }
+      #payments .row p,
+      #customs .row p {
+        display: none;
+      }
+      .timeline {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        border: 0;
+        overflow: visible;
+      }
       .phase {
         min-height: auto;
-        padding: 20px;
+        padding: 16px;
+        border: 1px solid rgba(255,255,255,.14);
+        border-radius: 8px;
+        background: rgba(255,255,255,.055);
       }
+      .phase:last-child { border: 1px solid rgba(255,255,255,.14); }
       .phase h3 {
-        margin: 18px 0 10px;
-        font-size: 18px;
+        margin: 14px 0 0;
+        font-size: 15px;
+        line-height: 1.25;
+      }
+      .phase p {
+        display: none;
       }
       .contact {
         min-height: auto;
