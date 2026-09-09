@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Метрополия — ВЭД, логистика и таможенное сопровождение</title>
-  <meta name="description" content="Метрополия — сопровождение импортных поставок: оплата поставщикам, международная логистика, таможенное оформление и документы для работы в России.">
+  <meta name="description" content="ООО «Метрополия»: международная логистика, оплата поставщикам, таможенная очистка и документы для легальной торговли в РФ.">
   <style>
     :root {
       color-scheme: dark;
@@ -262,7 +262,6 @@
       transform: translate(-50%, -50%);
       border: 1px solid rgba(255,255,255,.26);
       border-radius: 50%;
-      animation: spin 18s linear infinite;
     }
 
     .orbit::before, .orbit::after {
@@ -528,7 +527,7 @@
     }
 
     .reveal {
-      opacity: 0;
+      opacity: 1;
       transform: translateY(16px);
       transition: opacity .6s ease, transform .6s ease;
     }
@@ -536,124 +535,6 @@
     .reveal.visible {
       opacity: 1;
       transform: translateY(0);
-    }
-
-    @keyframes spin {
-      to { transform: translate(-50%, -50%) rotate(360deg); }
-    }
-
-
-    /* Обновленный первый экран */
-    .hero {
-      min-height: calc(100svh - 74px);
-      padding: 56px 0;
-    }
-
-    .hero-grid {
-      grid-template-columns: minmax(0, .88fr) minmax(430px, 1.12fr);
-      gap: 42px;
-    }
-
-    .hero-copy {
-      position: relative;
-      z-index: 3;
-    }
-
-    .hero-copy h1 {
-      max-width: 620px;
-      letter-spacing: -.035em;
-    }
-
-    .hero-copy .lead {
-      max-width: 610px;
-    }
-
-    .route-panel {
-      min-height: 540px;
-      background:
-        linear-gradient(135deg, rgba(5, 14, 15, .18), rgba(5, 10, 10, .72)),
-        url("https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=1500&q=85") center / cover;
-      box-shadow: 0 30px 100px rgba(0,0,0,.48);
-    }
-
-    .route-panel::before {
-      background:
-        linear-gradient(180deg, rgba(7, 13, 13, .02), rgba(7, 13, 13, .7)),
-        linear-gradient(120deg, rgba(94,224,183,.08), transparent 45%, rgba(217,155,91,.14));
-      opacity: 1;
-      mix-blend-mode: normal;
-    }
-
-    .route-panel::after {
-      content: "МЕЖДУНАРОДНАЯ ЛОГИСТИКА";
-      position: absolute;
-      top: 24px;
-      right: 24px;
-      z-index: 2;
-      padding: 9px 12px;
-      border: 1px solid rgba(255,255,255,.2);
-      border-radius: 999px;
-      background: rgba(7,12,12,.54);
-      backdrop-filter: blur(10px);
-      color: #f4f1ea;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: .11em;
-    }
-
-    .route-panel .orbit {
-      width: 300px;
-      height: 300px;
-      border-color: rgba(255,255,255,.12);
-      opacity: .7;
-    }
-
-    .path-card {
-      left: 20px;
-      right: 20px;
-      bottom: 20px;
-      background: rgba(6, 11, 11, .78);
-      border-color: rgba(255,255,255,.2);
-    }
-
-    .path-card small {
-      color: #fff;
-    }
-
-    .metric b { color: #fff; }
-
-    @media (max-width: 920px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .route-panel {
-        min-height: 440px;
-      }
-    }
-
-    @media (max-width: 620px) {
-      .route-panel {
-        display: block;
-        min-height: 420px;
-      }
-
-      .route-panel .orbit {
-        width: 230px;
-        height: 230px;
-      }
-
-      .route-panel::after {
-        top: 16px;
-        right: 16px;
-        font-size: 9px;
-      }
-
-      .path-card {
-        left: 12px;
-        right: 12px;
-        bottom: 12px;
-      }
     }
 
     @media (max-width: 920px) {
@@ -669,166 +550,127 @@
     }
 
     @media (max-width: 620px) {
-      .wrap { width: min(100% - 32px, 1180px); }
-      .nav { height: 68px; gap: 12px; }
-      .brand { gap: 10px; }
-      .brand .mark { display: grid; }
-      .brand > span:not(.mark) { display: block; }
-      .brand strong { font-size: 15px; }
+      .wrap { width: min(100% - 28px, 1180px); }
+      .nav { height: 64px; gap: 10px; }
+      .brand { gap: 9px; min-width: 0; }
+      .brand .mark { display: grid; width: 38px; height: 38px; flex-basis: 38px; }
+      .brand > span:not(.mark) { display: block; min-width: 0; }
+      .brand strong { font-size: 14px; }
       .brand span span { display: none; }
       .nav .btn {
-        min-height: 38px;
-        padding: 0 12px;
-        font-size: 13px;
+        min-height: 36px;
+        padding: 0 11px;
+        font-size: 12px;
+        white-space: nowrap;
       }
       .hero {
         min-height: auto;
-        padding: 42px 0 48px;
+        padding: 38px 0 42px;
       }
       .eyebrow {
-        font-size: 11px;
-        gap: 8px;
-        letter-spacing: .1em;
+        font-size: 10px;
+        gap: 7px;
+        letter-spacing: .09em;
       }
-      .eyebrow::before { width: 24px; }
+      .eyebrow::before { width: 20px; }
       h1 {
-        margin-top: 18px;
-        font-size: 40px;
-        line-height: 1.04;
+        margin-top: 16px;
+        font-size: clamp(36px, 11vw, 46px);
+        line-height: 1.02;
+        max-width: 100%;
       }
       .lead {
-        margin-top: 18px;
-        font-size: 17px;
-        line-height: 1.5;
+        margin-top: 16px;
+        font-size: 16px;
+        line-height: 1.48;
+        max-width: 100%;
       }
       .hero-actions {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 10px;
-        margin-top: 26px;
+        gap: 9px;
+        margin-top: 24px;
       }
       .hero-actions .btn {
         width: 100%;
-        min-height: 48px;
+        min-height: 46px;
       }
       .metrics {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 8px;
-        margin-top: 28px;
+        gap: 7px;
+        margin-top: 24px;
+        max-width: none;
       }
       .metric {
-        min-height: 104px;
-        padding: 14px 10px;
+        min-height: 96px;
+        padding: 13px 8px;
         border: 1px solid rgba(255,255,255,.14);
         border-radius: 8px;
         background: rgba(255,255,255,.055);
       }
-      .metric b { font-size: 28px; }
+      .metric b { font-size: clamp(24px, 7vw, 30px); }
       .metric span {
-        margin-top: 8px;
-        font-size: 11px;
+        margin-top: 7px;
+        font-size: 10px;
         line-height: 1.25;
       }
-      .path { grid-template-columns: 1fr; }
       .route-panel { display: none; }
-      .orbit { width: 250px; height: 250px; }
-      section { padding: 46px 0; }
-      .section-head { margin-bottom: 22px; }
+      section { padding: 44px 0; }
+      .section-head { margin-bottom: 20px; }
       h2 {
-        font-size: 30px;
-        line-height: 1.08;
+        font-size: clamp(28px, 8.5vw, 34px);
+        line-height: 1.06;
       }
-      .section-head p,
-      .card p,
-      .row p,
-      .phase p {
-        font-size: 14px;
-      }
-      .cards { gap: 12px; }
-      .card {
-        min-height: auto;
-        padding: 20px;
-      }
-      .icon {
-        width: 40px;
-        height: 40px;
-        margin-bottom: 18px;
-      }
-      .card h3 { font-size: 19px; }
-      .split { gap: 24px; }
-      #payments .split,
-      #customs .split {
-        gap: 18px;
-      }
-      #payments .list,
-      #customs .list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-      }
-      .row {
+      .section-head p, .card p, .row p, .phase p { font-size: 14px; }
+      .cards { gap: 10px; }
+      .card { min-height: auto; padding: 19px; }
+      .icon { width: 40px; height: 40px; margin-bottom: 16px; }
+      .card h3 { font-size: 18px; }
+      .split { gap: 22px; }
+      #payments .split, #customs .split { gap: 16px; }
+      #payments .list, #customs .list {
         grid-template-columns: 1fr;
-        gap: 10px;
-        padding: 18px;
+        gap: 9px;
       }
-      #payments .row,
-      #customs .row {
-        min-height: 132px;
-        padding: 14px;
+      .row { grid-template-columns: 1fr; gap: 9px; padding: 17px; }
+      #payments .row, #customs .row {
+        min-height: auto;
+        padding: 15px;
         align-content: start;
       }
       .row b {
         width: fit-content;
-        padding: 4px 9px;
+        padding: 4px 8px;
         border-radius: 999px;
         background: rgba(217,155,91,.12);
-        font-size: 13px;
+        font-size: 12px;
       }
-      .row h3 { font-size: 18px; }
-      #payments .row h3,
-      #customs .row h3 {
-        font-size: 14px;
-        line-height: 1.25;
-        margin-bottom: 0;
-      }
-      #payments .row p,
-      #customs .row p {
-        display: none;
-      }
+      .row h3 { font-size: 17px; line-height: 1.25; }
+      #payments .row h3, #customs .row h3 { font-size: 16px; line-height: 1.28; }
+      #payments .row p, #customs .row p { display: block; margin-top: 7px; font-size: 13px; line-height: 1.4; }
       .timeline {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
+        grid-template-columns: 1fr;
+        gap: 9px;
         border: 0;
         overflow: visible;
       }
       .phase {
         min-height: auto;
-        padding: 16px;
+        padding: 17px;
         border: 1px solid rgba(255,255,255,.14);
         border-radius: 8px;
         background: rgba(255,255,255,.055);
       }
       .phase:last-child { border: 1px solid rgba(255,255,255,.14); }
-      .phase h3 {
-        margin: 14px 0 0;
-        font-size: 15px;
-        line-height: 1.25;
-      }
-      .phase p {
-        display: none;
-      }
-      .contact {
-        min-height: auto;
-        padding: 24px;
-      }
-      .contact h2 { font-size: 28px; }
-      .contact p {
-        font-size: 15px;
-        line-height: 1.5;
-      }
-      footer { padding: 34px 0 36px; }
-      .footer-main { gap: 28px; }
+      .phase h3 { margin: 12px 0 0; font-size: 16px; line-height: 1.25; }
+      .phase p { display: block; margin-top: 8px; line-height: 1.4; }
+      .contact { min-height: auto; padding: 22px 19px; }
+      .contact h2 { font-size: 27px; line-height: 1.08; }
+      .contact p { font-size: 14px; line-height: 1.5; }
+      footer { padding: 32px 0 34px; }
+      .footer-main { gap: 24px; }
       .footer-brand h2 { font-size: 28px; }
-      .contact-list li { grid-template-columns: 1fr; gap: 8px; }
+      .contact-list li { grid-template-columns: 1fr; gap: 7px; }
       .contact-list b { font-size: 11px; }
     }
 
@@ -872,29 +714,29 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow">ВЭД • логистика • таможенное оформление</span>
+          <span class="eyebrow">ВЭД • логистика • документы</span>
           <h1>Импорт под контролем</h1>
-          <p class="lead">«Метрополия» сопровождает международные поставки от оплаты инвойса до доставки и таможенного оформления. Берём на себя логистику, документы и организационные вопросы, чтобы импорт проходил предсказуемо.</p>
+          <p class="lead">ООО «Метрополия» помогает оплатить поставщика, привезти груз, пройти таможню и получить документы для легальной торговли в России.</p>
           <div class="hero-actions">
             <a class="btn primary" href="#contacts">Обсудить поставку</a>
             <a class="btn" href="#workflow">Посмотреть процесс</a>
           </div>
           <div class="metrics" aria-label="Ключевые показатели">
-            <div class="metric"><b data-count="4">4</b><span>ключевых этапа поставки</span></div>
-            <div class="metric"><b data-count="1">1</b><span>команда для сопровождения сделки</span></div>
-            <div class="metric"><b data-count="360">360</b><span>градусов контроля процесса</span></div>
+            <div class="metric"><b data-count="4">4</b><span>этапа в едином окне</span></div>
+            <div class="metric"><b data-count="360">360</b><span>градусов контроля сделки</span></div>
+            <div class="metric"><b data-count="1">1</b><span>партнер вместо цепочки подрядчиков</span></div>
           </div>
         </div>
 
         <div class="route-panel" aria-label="Маршрут поставки">
           <div class="orbit" aria-hidden="true"></div>
           <div class="path-card">
-            <small>Поставка под контролем</small>
+            <small>Маршрут под контролем</small>
             <div class="path">
-              <div class="stop" data-step="01">Инвойс и условия сделки</div>
-              <div class="stop" data-step="02">Оплата поставщику</div>
-              <div class="stop" data-step="03">Логистика и доставка</div>
-              <div class="stop" data-step="04">Таможенное оформление</div>
+              <div class="stop" data-step="01">Инвойс и контракт</div>
+              <div class="stop" data-step="02">Платеж поставщику</div>
+              <div class="stop" data-step="03">Доставка груза</div>
+              <div class="stop" data-step="04">Таможенный выпуск</div>
             </div>
           </div>
         </div>
@@ -904,8 +746,8 @@
     <section id="services">
       <div class="wrap">
         <div class="section-head reveal">
-          <h2>Полный цикл сопровождения импортной поставки</h2>
-          <p>Сопровождаем поставку целиком: помогаем с оплатой товара, организуем международную доставку и берём на себя таможенные формальности и необходимые документы.</p>
+          <h2>Собираем сложную поставку в понятный рабочий контур</h2>
+          <p>По модели исходного референса фокус здесь не только на перевозке, а на полном сопровождении ВЭД: деньги, маршрут, таможня и документы.</p>
         </div>
         <div class="cards">
           <article class="card reveal">
@@ -913,21 +755,21 @@
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 7h16v10H4z" stroke="currentColor" stroke-width="1.8"/><path d="M7 10h7M7 14h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
             </div>
             <h3>Оплата товара</h3>
-            <p>Подбираем удобную схему оплаты с учётом страны поставщика, особенностей товара и дальнейшей логистики. Согласуем платеж с документами по сделке.</p>
+            <p>Подбираем платежное решение под страну, поставщика и товарную группу. Синхронизируем оплату с контрактом, логистикой и валютным контролем.</p>
           </article>
           <article class="card reveal">
             <div class="icon" aria-hidden="true">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 16h13V7H3v9Z" stroke="currentColor" stroke-width="1.8"/><path d="M16 11h3l2 3v2h-5v-5Z" stroke="currentColor" stroke-width="1.8"/><path d="M7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM18 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" stroke="currentColor" stroke-width="1.8"/></svg>
             </div>
             <h3>Логистика</h3>
-            <p>Организуем сборные и контейнерные перевозки, а также автомобильную, морскую и железнодорожную доставку. Помогаем выбрать маршрут по срокам и стоимости.</p>
+            <p>Организуем сборные, контейнерные, автомобильные, морские и железнодорожные перевозки. Сравниваем сроки, риски и стоимость маршрутов.</p>
           </article>
           <article class="card reveal">
             <div class="icon" aria-hidden="true">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M6 3h9l3 3v15H6V3Z" stroke="currentColor" stroke-width="1.8"/><path d="M14 3v4h4M9 12h6M9 16h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
             </div>
             <h3>Таможенная очистка</h3>
-            <p>Подготавливаем документы и расчёты, сопровождаем предварительные осмотры и досмотры, а также подачу декларации до завершения таможенного оформления.</p>
+            <p>Готовим документы, рассчитываем платежи, сопровождаем досмотры и подачу деклараций до статуса «выпуск разрешен».</p>
           </article>
         </div>
       </div>
@@ -937,13 +779,13 @@
       <div class="wrap split">
         <div class="sticky-note reveal">
           <span class="eyebrow">Платежи поставщикам</span>
-          <h2>Платежи поставщикам за рубеж — понятно и по делу</h2>
+          <h2>Международная оплата без лишней драматургии</h2>
         </div>
         <div class="list">
-          <article class="row reveal"><b>01</b><div><h3>Получение инвойса и проверка сделки</h3><p>Проверяем инвойс, реквизиты, товар, страну отправления и требования, которые могут повлиять на дальнейшее оформление.</p></div></article>
-          <article class="row reveal"><b>02</b><div><h3>Работа по агентскому или торговому договору</h3><p>Согласуем формат работы и документы, необходимые для проведения сделки и последующего оформления поставки.</p></div></article>
-          <article class="row reveal"><b>03</b><div><h3>Оплата широкого спектра товарных групп</h3><p>Учитываем особенности товара, требования к маркировке и документам, а также условия его ввоза и реализации в России.</p></div></article>
-          <article class="row reveal"><b>04</b><div><h3>Согласование сроков поступления средств</h3><p>Согласуем сроки и последовательность платежа, чтобы оплата не задерживала запуск поставки.</p></div></article>
+          <article class="row reveal"><b>01</b><div><h3>Получение инвойса и проверка сделки</h3><p>Смотрим реквизиты, товарную группу, ограничения, страну отправления и требования к будущему оформлению.</p></div></article>
+          <article class="row reveal"><b>02</b><div><h3>Работа по агентскому или торговому договору</h3><p>Подбираем юридическую схему под задачу клиента и обеспечиваем прозрачную документальную связку.</p></div></article>
+          <article class="row reveal"><b>03</b><div><h3>Оплата широкого спектра товарных групп</h3><p>Учитываем особенности товара, логистики, маркировки, сертификации и последующей продажи в России.</p></div></article>
+          <article class="row reveal"><b>04</b><div><h3>Согласование сроков поступления средств</h3><p>Планируем платеж так, чтобы поставщик вовремя увидел оплату, а поставка не потеряла темп.</p></div></article>
         </div>
       </div>
     </section>
@@ -952,13 +794,13 @@
       <div class="wrap split">
         <div class="sticky-note reveal">
           <span class="eyebrow">Логистика и таможня</span>
-          <h2>Логистика и таможня — заранее просчитываем важное</h2>
+          <h2>Заранее считаем то, что обычно всплывает на границе</h2>
         </div>
         <div class="list">
-          <article class="row reveal"><b>01</b><div><h3>Расчет пошлин и платежей</h3><p>Проверяем применимые ставки пошлин, специальные меры, возможные преференции и ограничения на ввоз.</p></div></article>
-          <article class="row reveal"><b>02</b><div><h3>Маркировка и разрешительные документы</h3><p>Проверяем требования к маркировке и этикеткам, техническим регламентам, декларациям, сертификатам и системе «Честный знак».</p></div></article>
-          <article class="row reveal"><b>03</b><div><h3>Выбор маршрута</h3><p>Сравниваем варианты доставки с учётом стоимости, сроков, особенностей груза и условий работы брокера.</p></div></article>
-          <article class="row reveal"><b>04</b><div><h3>Подача декларации</h3><p>Готовим и сопровождаем подачу декларации, а также взаимодействие с таможенными органами до завершения оформления.</p></div></article>
+          <article class="row reveal"><b>01</b><div><h3>Расчет пошлин и платежей</h3><p>Проверяем ставки, спецпошлины, преференции и возможные меры нетарифного регулирования.</p></div></article>
+          <article class="row reveal"><b>02</b><div><h3>Маркировка и разрешительные документы</h3><p>Уточняем требования ТР ТС, ГОСТ, «Честного знака», этикеток, деклараций и сертификатов.</p></div></article>
+          <article class="row reveal"><b>03</b><div><h3>Выбор маршрута</h3><p>Сравниваем стоимость доставки, сроки, транзитные ограничения, формат груза и комиссию брокера.</p></div></article>
+          <article class="row reveal"><b>04</b><div><h3>Подача декларации</h3><p>Сопровождаем подготовку, подачу и коммуникацию с таможенными органами до завершения оформления.</p></div></article>
         </div>
       </div>
     </section>
@@ -967,13 +809,13 @@
       <div class="wrap">
         <div class="section-head reveal">
           <h2>Алгоритм работы</h2>
-          <p>Вы получаете понятную последовательность действий, а организационные вопросы остаются у команды сопровождения.</p>
+          <p>Клиент видит понятную последовательность, а операционная часть остается у команды сопровождения.</p>
         </div>
         <div class="timeline">
-          <article class="phase reveal"><span>01</span><h3>Инвойс от поставщика</h3><p>Получаем инвойс и фиксируем условия поставки, стоимость товара и необходимые документы.</p></article>
-          <article class="phase reveal"><span>02</span><h3>Контракт для выкупа</h3><p>Согласуем договорную схему и документы, необходимые для выкупа и поставки.</p></article>
-          <article class="phase reveal"><span>03</span><h3>Валютный контроль</h3><p>Организуем платеж с учётом требований валютного контроля и документов по сделке.</p></article>
-          <article class="phase reveal"><span>04</span><h3>Оплата и доставка</h3><p>Проводим оплату, организуем доставку и сопровождаем груз до завершения таможенного оформления.</p></article>
+          <article class="phase reveal"><span>01</span><h3>Инвойс от поставщика</h3><p>Фиксируем условия поставки, стоимость, товар и документы, которые понадобятся на следующих этапах.</p></article>
+          <article class="phase reveal"><span>02</span><h3>Контракт для выкупа</h3><p>Оформляем договорную основу сделки и согласуем роли сторон.</p></article>
+          <article class="phase reveal"><span>03</span><h3>Валютный контроль</h3><p>Готовим платежную часть так, чтобы она проходила без лишних задержек.</p></article>
+          <article class="phase reveal"><span>04</span><h3>Оплата и доставка</h3><p>Проводим оплату, запускаем маршрут и доводим груз до таможенного выпуска.</p></article>
         </div>
       </div>
     </section>
@@ -983,8 +825,8 @@
         <div class="contact reveal">
           <div>
             <span class="eyebrow">ООО «Метрополия»</span>
-            <h2>Ваш логистический отдел на аутсорсинге</h2>
-            <p>Отправьте инвойс или кратко опишите товар и задачу. Мы оценим вариант оплаты, маршрут, требования к оформлению и необходимые документы. Почта: info@metropoly.pro.</p>
+            <h2>Логистический отдел на аутсорсинге для импортных поставок</h2>
+            <p>Оставьте заявку, приложите инвойс или опишите товар: команда оценит платежную схему, маршрут, таможенные требования и пакет документов. Почта для связи: info@metropoly.pro.</p>
           </div>
         </div>
       </div>
@@ -998,7 +840,7 @@
           <h2>Контакты</h2>
         </div>
         <ul class="contact-list">
-          <li><b>Адрес</b><span>Москва, пер. Рубцов, д. 4</span></li>
+          <li><b>Адрес</b><span>Москва, ул. Партизанская, д. 26, помещение 4</span></li>
           <li><b>Время работы</b><span>С понедельника по пятницу с 9:00 до 18:00, суббота и воскресенье — выходные</span></li>
           <li><b>Для связи</b><span>Почта <a href="mailto:info@metropoly.pro">info@metropoly.pro</a></span></li>
         </ul>
